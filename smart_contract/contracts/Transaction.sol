@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
 contract Transactions {
     uint256 transactionCount;
@@ -62,6 +62,6 @@ contract Transactions {
     }
 
     function getTransactionsCount() public view returns (uint256) {
-        return transactions;
+        return transactionCount;
     }
 }

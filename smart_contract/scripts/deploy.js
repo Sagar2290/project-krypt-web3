@@ -1,10 +1,11 @@
 const main = async () => {
-  const Transactions = await hre.ethers.getContractFactory("Transactions");
-  const transactions = await Transactions.deploy();
+  const [deployer] = await ethers.getSigners();
 
-  await lock.waitForDeployment();
+  console.log("Deploying contracts with the account:", deployer.address);
 
-  console.log(`Transactions deployed to:  ${transactions.address}`);
+  const token = await ethers.deployContract("Transactions");
+
+  console.log("Token address:", await token.getAddress());
 };
 
 const runMain = async () => {
