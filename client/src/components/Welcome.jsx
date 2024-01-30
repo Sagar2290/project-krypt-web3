@@ -4,6 +4,7 @@ import { BsInfoCircle } from "react-icons/bs";
 
 import { Loader } from "./";
 import { useContext } from "react";
+import { shortenAddress } from "../utils/shortenAddress";
 import { TransactionContext } from "../context/TransactionContext";
 
 const companyCommonStyles =
@@ -89,7 +90,7 @@ const Welcome = () => {
               <div>
                 <p className="text-white font-light text-sm">
                   {/* {shortenAddress(currentAccount)} */}
-                  0xasdf...hjkl
+                  {shortenAddress(currentAccount)}
                 </p>
                 <p className="text-white font-semibold text-lg mt-1">
                   Ethereum
