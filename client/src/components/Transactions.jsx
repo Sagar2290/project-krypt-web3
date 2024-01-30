@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import { TransactionContext } from "../context/TransactionContext";
 
+import useFetch from "../hooks/useFetch";
 import dummyData from "../utils/dummyData";
 import { shortenAddress } from "../utils/shortenAddress";
 
@@ -14,7 +15,7 @@ const TransactionsCard = ({
   amount,
   url,
 }) => {
-  // const gifUrl = useFetch({ keyword });
+  const gifUrl = useFetch({ keyword });
 
   return (
     <div
@@ -54,6 +55,11 @@ const TransactionsCard = ({
             </>
           )}
         </div>
+        <img
+          src={gifUrl || url}
+          alt="nature"
+          className="w-full h-64 2xl:h-96 rounded-md shadow-lg object-cover"
+        />
         <div className="bg-black p-3 px-5 w-max rounded-3xl -mt-5 shadow-2xl">
           <p className="text-[#37c7da] font-bold">{timestamp}</p>
         </div>
